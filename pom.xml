@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zyp</groupId>
+    <artifactId>RedisTool</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator</artifactId>
+            <!-- 2.0.0+ -->
+            <version>2.3.9.RELEASE</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <!-- 2.0.0+ -->
+            <version>2.3.9.RELEASE</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.39.Final</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+<!--        <plugins>-->
+
+<!--            <plugin>-->
+<!--                <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--            </plugin>-->
+
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-pmd-plugin</artifactId>-->
+<!--                <version>3.25.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <phase>verify</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>pmd</goal>-->
+<!--                            <goal>cpd</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <linkXRef>true</linkXRef>-->
+<!--                    <minimumTokens>100</minimumTokens>-->
+<!--                    <targetJdk>${source.version}</targetJdk>-->
+<!--                    <verbose>true</verbose>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
+<!--            <plugin>-->
+<!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
+<!--            </plugin>-->
+
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-surefire-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <redirectTestOutputToFile>true</redirectTestOutputToFile>-->
+
+<!--                    <excludes>-->
+<!--                        <exclude>LRUCacheMapTest</exclude>-->
+<!--                        <exclude>SoftCacheMapTest</exclude>-->
+<!--                        <exclude>RedissonFairLockTest</exclude>-->
+<!--                        <exclude>RedissonLockHeavyTest</exclude>-->
+
+<!--                        <include>RedissonPriorityBlockingQueueTest</include>-->
+<!--                        <exclude>RedissonLocalCachedMapSerializationCodecTest</exclude>-->
+<!--                    </excludes>-->
+
+<!--                    <trimStackTrace>true</trimStackTrace>-->
+<!--                    <forkCount>6</forkCount>-->
+<!--                    <reuseForks>false</reuseForks>-->
+<!--                    <argLine>${argLine} -javaagent:"${settings.localRepository}"/com/github/hazendaz/jmockit/jmockit/1.54.0/jmockit-1.54.0.jar</argLine>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
+<!--            <plugin>-->
+<!--                <artifactId>maven-jar-plugin</artifactId>-->
+<!--                <version>3.4.1</version>-->
+<!--                <configuration>-->
+<!--                    <archive>-->
+<!--                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>-->
+<!--                        <manifestEntries>-->
+<!--                            <Build-Time>${maven.build.timestamp}</Build-Time>-->
+<!--                            <Automatic-Module-Name>redisson</Automatic-Module-Name>-->
+<!--                        </manifestEntries>-->
+<!--                    </archive>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
+<!--            <plugin>-->
+<!--                <groupId>org.apache.felix</groupId>-->
+<!--                <artifactId>maven-bundle-plugin</artifactId>-->
+<!--                <version>5.1.9</version>-->
+<!--                <extensions>true</extensions>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>bundle-manifest</id>-->
+<!--                        <phase>process-classes</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>manifest</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <instructions>-->
+<!--                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>-->
+<!--                        <DynamicImport-Package>*</DynamicImport-Package>-->
+<!--                        <Import-Package>jdk.net;resolution:=optional,javax.cache.*;resolution:=optional,io.reactivex.rxjava3.*;resolution:=optional,jodd.*;resolution:=optional,net.bytebuddy.*;resolution:=optional,org.jboss.marshalling.*;resolution:=optional,org.springframework.*;resolution:=optional,io.projectreactor.*;resolution:=optional,*</Import-Package>-->
+<!--                    </instructions>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
+<!--            <plugin>-->
+<!--                <groupId>com.mycila</groupId>-->
+<!--                <artifactId>license-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+    </build>
+
+</project>
