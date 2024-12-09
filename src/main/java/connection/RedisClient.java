@@ -20,8 +20,6 @@ public class RedisClient {
     public RedisClient(ConnectionProperties properties) {
         this.properties = properties;
         initConnection(properties);
-
-
     }
 
     /**
@@ -37,12 +35,7 @@ public class RedisClient {
         bootstrap = new Bootstrap();
         bootstrap.group(worker);
         bootstrap.channel(NioSocketChannel.class);
-        bootstrap.handler(new ChannelInitializer<SocketChannel>() {
-            @Override
-            protected void initChannel(SocketChannel ch) throws Exception {
-
-            }
-        });
+        bootstrap.handler(new RedisChannelInitializer());
         // 处理连接
         try {
             ChannelFuture channelFu = bootstrap.connect(properties.getHost(), properties.getPort()).sync();
