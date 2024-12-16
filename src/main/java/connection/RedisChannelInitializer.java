@@ -1,5 +1,7 @@
 package connection;
 
+import connection.handler.Encode;
+import connection.handler.MesOutHandler;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -15,6 +17,7 @@ public class RedisChannelInitializer extends ChannelInitializer<NioSocketChannel
 
     @Override
     protected void initChannel(NioSocketChannel channel) throws Exception {
-
+        channel.pipeline().addLast(new MesOutHandler());
+        channel.pipeline().addLast(new Encode());
     }
 }

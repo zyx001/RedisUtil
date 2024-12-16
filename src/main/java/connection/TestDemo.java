@@ -9,6 +9,7 @@ public class TestDemo {
         connectionProperties.setConnectTimeout(10000L)
                 .setHost("192.168.232.132").setPort(6379);
         RedisClient redisClient = new RedisClient(connectionProperties);
+        redisClient.channel.writeAndFlush("set testD 1");
         System.out.println("");
     }
 }

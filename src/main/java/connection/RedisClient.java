@@ -3,6 +3,7 @@ package connection;
 import connection.properties.ConnectionProperties;
 import connection.properties.RedisChannelInitializer;
 import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
@@ -15,6 +16,8 @@ public class RedisClient {
     public ConnectionProperties properties;
 
     public Bootstrap bootstrap;
+
+    public Channel channel;
 
     public RedisClient(ConnectionProperties properties) {
         this.properties = properties;
@@ -38,7 +41,7 @@ public class RedisClient {
         // 处理连接
         try {
             ChannelFuture channelFu = bootstrap.connect(properties.getHost(), properties.getPort()).sync();
-            channelFu.channel().closeFuture().sync();
+            this.channel = channelFu.channel();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
