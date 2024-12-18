@@ -1,11 +1,9 @@
 package connection.properties;
 
-import connection.handler.Encode;
+import connection.handler.RedisCodec;
 import connection.handler.MesOutHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.logging.LogLevel;
-import io.netty.handler.logging.LoggingHandler;
 
 public class RedisChannelInitializer extends ChannelInitializer<NioSocketChannel> {
     @Override
@@ -13,6 +11,6 @@ public class RedisChannelInitializer extends ChannelInitializer<NioSocketChannel
 //        ch.pipeline().addLast(new LoggingHandler(LogLevel.INFO)); // 日志处理器（可选）
 //        ch.pipeline().addLast(new ClientInfoHandler());
         ch.pipeline().addLast(new MesOutHandler());
-        ch.pipeline().addLast(new Encode());
+        ch.pipeline().addLast(new RedisCodec());
     }
 }
