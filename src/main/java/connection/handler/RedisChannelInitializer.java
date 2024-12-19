@@ -1,4 +1,4 @@
-package connection.properties;
+package connection.handler;
 
 import connection.handler.RedisCodec;
 import connection.handler.MesOutHandler;

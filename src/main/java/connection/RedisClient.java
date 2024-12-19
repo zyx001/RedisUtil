@@ -1,7 +1,7 @@
 package connection;
 
 import connection.properties.ConnectionProperties;
-import connection.properties.RedisChannelInitializer;
+import connection.handler.RedisChannelInitializer;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;

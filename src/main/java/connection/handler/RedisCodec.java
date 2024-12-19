@@ -37,6 +37,5 @@ public class RedisCodec extends ByteToMessageCodec<String> {
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
         byte[] bytes = new byte[in.readableBytes()];
         in.readBytes(bytes);
-        System.out.println(new String(bytes));
     }
 }
