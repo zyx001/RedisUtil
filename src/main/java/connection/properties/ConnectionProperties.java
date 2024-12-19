@@ -24,6 +24,12 @@ public class ConnectionProperties {
 
     private Long readTimeout;
 
+    // 缓冲区长度
+    private Integer byteBufLength;
+
+    // 是否主动创建连接
+    private Integer activeConnection;
+
 
     public String getHost() {
         return host;
@@ -86,5 +92,24 @@ public class ConnectionProperties {
     public ConnectionProperties setReadTimeout(Long readTimeout) {
         this.readTimeout = readTimeout;
         return this;
+    }
+
+    public Integer getByteBufLength() {
+        return byteBufLength;
+    }
+
+    public void setByteBufLength(Integer byteBufLength) {
+        this.byteBufLength = byteBufLength;
+    }
+
+    public Integer getActiveConnection() {
+        if (activeConnection == null) {
+            return 1;
+        }
+        return activeConnection;
+    }
+
+    public void setActiveConnection(Integer activeConnection) {
+        this.activeConnection = activeConnection;
     }
 }
